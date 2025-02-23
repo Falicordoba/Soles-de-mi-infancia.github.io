@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Soles de la Infancia - Machado y Matemáticas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --color-primario: #2c3e50;
+      --color-secundario: #e74c3c;
+    }
+    
+    body {
+      background: #f8f9fa;
+      font-family: 'Merriweather', serif;
+    }
+    
+    .sidebar {
+      background: var(--color-primario);
+      color: white;
+      min-height: 100vh;
+    }
+    
+    .actividad-card {
+      transition: transform 0.3s;
+      border: 2px solid var(--color-secundario);
+    }
+    
+    .actividad-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .grafico-interactivo {
+      height: 400px;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 sidebar">
+        <div class="p-3">
+          <h4 class="mb-4"><i class="fas fa-book-open me-2"></i>Recursos Didácticos</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a class="nav-link text-white" href="#introduccion"><i class="fas fa-info-circle me-2"></i>Introducción</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link text-white" href="#actividades"><i class="fas fa-tasks me-2"></i>Actividades</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link text-white" href="#recursos"><i class="fas fa-link me-2"></i>Enlaces Útiles</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link text-white" href="#Casos de Estudio"><i class="fas fa-chart-line me-2"></i>Gráficos Interactivos</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Contenido principal -->
+      <main class="col-md-9 col-lg-10 px-4 py-3">
+        <!-- Introducción modificada -->
+        <section id="introduccion" class="mb-5">
+          <h1 class="display-4 mb-4 text-primary"><i class="fas fa-sun me-3"></i>Los Soles de mi Infancia</h1>
+          
+          <!-- Nueva tarjeta de situación de aprendizaje -->
+          <div class="card mb-4 shadow-lg border-primary">
+            <div class="card-header bg-primary text-white">
+              <h2 class="mb-0"><i class="fas fa-chalkboard-teacher me-2"></i>Situación de Aprendizaje</h2>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <!-- Columna izquierda - Datos básicos -->
+                <div class="col-md-4 border-end">
+                  <h5 class="text-primary"><i class="fas fa-info-circle me-2"></i>Datos clave</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>Nivel:</strong><br>
+                      <span class="badge bg-secondary">4º ESO</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Asignatura:</strong><br>
+                      <span class="badge bg-danger">Matemáticas + Lengua</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Duración:</strong><br>
+                      <i class="fas fa-clock me-2"></i>3 sesiones (50min c/u)
+                    </li>
+                  </ul>
+                </div>
+      
+                <!-- Columna derecha - Contenido desplegable -->
+                <div class="col-md-8">
+                  <div class="accordion" id="acordeonSituacion">
+                    <!-- Contexto -->
+                    <div class="accordion-item">
+                      <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#contexto">
+                          <i class="fas fa-lightbulb me-2"></i>Contexto
+                        </button>
+                      </h3>
+                      <div id="contexto" class="accordion-collapse collapse show" data-bs-parent="#acordeonSituacion">
+                        <div class="accordion-body">
+                          <p>Reflexión sobre el poema de Machado explorando conexiones entre:</p>
+                          <ul class="icon-list">
+                            <li><i class="fas fa-book-open me-2"></i>Poesía y vida cotidiana</li>
+                            <li><i class="fas fa-chart-line me-2"></i>Representación matemática de emociones</li>
+                            <li><i class="fas fa-clock me-2"></i>Relación tiempo-recuerdos</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <!-- Competencias -->
+                    <div class="accordion-item">
+                      <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#competencias">
+                          <i class="fas fa-tasks me-2"></i>Competencias clave
+                        </button>
+                      </h3>
+                      <div id="competencias" class="accordion-collapse collapse" data-bs-parent="#acordeonSituacion">
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="card mb-3 border-danger">
+                                <div class="card-body">
+                                  <h6><i class="fas fa-calculator me-2"></i>Matemática</h6>
+                                  <p class="small">Representación gráfica de conceptos abstractos</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="card mb-3 border-info">
+                                <div class="card-body">
+                                  <h6><i class="fas fa-comments me-2"></i>Lingüística</h6>
+                                  <p class="small">Análisis e interpretación poética</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="card border-success">
+                                <div class="card-body">
+                                  <h6><i class="fas fa-palette me-2"></i>Cultural</h6>
+                                  <p class="small">Vinculación interdisciplinaria arte-ciencia</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <!-- Objetivos -->
+                    <div class="accordion-item">
+                      <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#objetivos">
+                          <i class="fas fa-bullseye me-2"></i>Objetivos
+                        </button>
+                      </h3>
+                      <div id="objetivos" class="accordion-collapse collapse" data-bs-parent="#acordeonSituacion">
+                        <div class="accordion-body">
+                          <ol class="objectives-list">
+                            <li>Análisis de imágenes poéticas</li>
+                            <li>Modelado matemático de recuerdos</li>
+                            <li>Aplicación de funciones abstractas</li>
+                            <li>Integración creativa interdisciplinar</li>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <!-- Desarrollo -->
+                    <div class="accordion-item">
+                      <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#desarrollo">
+                          <i class="fas fa-calendar-alt me-2"></i>Desarrollo
+                        </button>
+                      </h3>
+                      <div id="desarrollo" class="accordion-collapse collapse" data-bs-parent="#acordeonSituacion">
+                        <div class="accordion-body">
+                          <div class="timeline">
+                            <!-- Sesión 1 -->
+                            <div class="timeline-item">
+                              <div class="timeline-icon bg-primary">
+                                <i class="fas fa-book-open"></i>
+                              </div>
+                              <div class="timeline-content">
+                                <h6>Sesión 1: Poesía y memoria</h6>
+                                <ul class="small">
+                                  <li>Lectura analítica del poema</li>
+                                  <li>Análisis de metáforas lumínicas</li>
+                                  <li>Creación de gráficas emocionales</li>
+                                </ul>
+                              </div>
+                            </div>
+      
+                            <!-- Sesión 2 -->
+                            <div class="timeline-item">
+                              <div class="timeline-icon bg-danger">
+                                <i class="fas fa-function"></i>
+                              </div>
+                              <div class="timeline-content">
+                                <h6>Sesión 2: Matemática poética</h6>
+                                <ul class="small">
+                                  <li>Modelado con \[I(t) = 10e^{-kt}\]</li>
+                                  <li>Taller de creación interdisciplinar</li>
+                                  <li>Presentación y reflexión final</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        <!-- Actividades -->
+        <section id="actividades" class="mb-5">
+          <h2 class="mb-4"><i class="fas fa-pencil-alt me-3"></i>Actividades Interactivas</h2>
+          <div class="row g-4">
+            <!-- Tarjeta existente del Taller Poético -->
+            <!-- Tarjeta existente de Modelado -->
+            
+            <!-- Nueva tarjeta del cuestionario -->
+    
+          </div>
+        </section>
+        <div class="col-md-12">
+          <div class="card actividad-card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-danger"><i class="fas fa-question-circle me-2"></i>Desafío Poético: Completa los Versos</h5>
+              
+              <div class="accordion" id="acordeonCuestionario">
+                <!-- Retrato -->
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#retrato">
+                      <i class="fas fa-portrait me-2"></i>Poema: Retrato
+                    </button>
+                  </h3>
+                  <div id="retrato" class="accordion-collapse collapse show" data-bs-parent="#acordeonCuestionario">
+                    <div class="accordion-body">
+                      <div class="row g-3">
+                        <!-- Infancia -->
+                        <div class="col-md-6">
+                          <h6><span class="badge bg-info">Infancia</span></h6>
+                          <div class="mb-3">
+                            <label class="form-label">"Mi infancia son recuerdos de un _______ de Sevilla."</label>
+                            <input type="text" class="form-control" placeholder="Escribe la palabra faltante">
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">"y un huerto claro donde madura el ________."</label>
+                            <input type="text" class="form-control" placeholder="Completa el verso">
+                          </div>
+                        </div>
+        
+                        <!-- Juventud -->
+                        <div class="col-md-6">
+                          <h6><span class="badge bg-warning">Juventud</span></h6>
+                          <div class="mb-3">
+                            <label class="form-label">"mi juventud, veinte años en tierra de ________."</label>
+                            <input type="text" class="form-control" placeholder="¿Qué palabra falta?">
+                          </div>
+                        </div>
+        
+                        <!-- Reflexiones -->
+                        <div class="col-md-12">
+                          <h6><span class="badge bg-primary">Reflexiones</span></h6>
+                          <div class="row g-2">
+                            <div class="col-md-6">
+                              <label class="form-label">"Ni un seductor Mañara ni un Bradomín he ________."</label>
+                              <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">"mas recibí la flecha que me asignó ________."</label>
+                              <input type="text" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Recuerdo Infantil -->
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#recuerdo">
+                      <i class="fas fa-child me-2"></i>Recuerdo Infantil
+                    </button>
+                  </h3>
+                  <div id="recuerdo" class="accordion-collapse collapse" data-bs-parent="#acordeonCuestionario">
+                    <div class="accordion-body">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">"Una tarde parda y ________ de invierno."</label>
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">"Es la clase. En un cartel se representa a ________."</label>
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Reflexiones Finales -->
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reflexiones">
+                      <i class="fas fa-brain me-2"></i>Análisis Personal
+                    </button>
+                  </h3>
+                  <div id="reflexiones" class="accordion-collapse collapse" data-bs-parent="#acordeonCuestionario">
+                    <div class="accordion-body">
+                      <div class="mb-3">
+                        <label class="form-label">¿Qué sentimientos evoca el poema en ti?</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Escribe un recuerdo especial de tu infancia:</label>
+                        <textarea class="form-control" rows="3" placeholder="Ejemplo: Recuerdo las tardes de verano en casa de mis abuelos..."></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="mt-4 d-flex justify-content-between align-items-center">
+                <small class="text-muted"><i class="fas fa-lightbulb me-2"></i>Pista: Usa términos como 'patio', 'limonero', 'Castilla'</small>
+                <button class="btn btn-danger"><i class="fas fa-paper-plane me-2"></i>Enviar Respuestas</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="actividades" class="mb-5">
+          <h2 class="mb-4"><i class="fas fa-pencil-alt me-3"></i>Actividades Interactivas</h2>
+          <div class="row g-4">
+           
+            
+            <div class="col-md-12">
+              <div class="card actividad-card h-100">
+                <div class="card actividad-card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title text-danger"><i class="fas fa-chart-line me-2"></i>Modelado Exponencial de Memorias</h5>
+                      
+                      <div class="row g-4">
+                        <!-- Gráficas de ejemplo -->
+                        <div class="col-md-12">
+                          <div class="card mb-3">
+                            <div class="card-header bg-info text-white">
+                              <i class="fas fa-memory me-2"></i>Casos de Estudio
+                            </div>
+                            <div class="card-body">
+                              <div class="row g-3">
+                                <!-- Gráfica 1 -->
+                                <div class="col-12">
+                                  <h6>Recuerdo débil (k=1)</h6>
+                                  <iframe src="Recuerdo 1 jpeg.jpg" width="866"height ="519"></iframe>
+                                       
+                                </div>
+                                
+                                <!-- Gráfica 2 -->
+                                <div class="col-12">
+                                  <h6>Memoria promedio (k=0.5)</h6>
+                                  <iframe src="Recuerdo 2 jpeg.jpg" width="866"height ="519"></iframe>
+                                       
+                                </div>
+                                
+                                <!-- Gráfica 3 -->
+                                <div class="col-12">
+                                  <h6>Recuerdo intenso (k=0.2)</h6>
+                                  <iframe src="Recuerdo 3 jpeg.jpg" width="924"height ="519"></iframe>
+                                      
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Simulación interactiva -->
+                        <div class="col-md-12">
+                          <div class="card mb-3">
+                            <div class="card-header bg-warning text-dark">
+                              <i class="fas fa-sliders-h me-2"></i>Simulador Interactivo
+                            </div>
+                            <div class="card-body">
+                              <div class="mb-4">
+                                <label class="form-label">Constante de decaimiento (k):</label>
+                                <input type="range" class="form-range" 
+                                       id="rangoK" min="0.1" max="1" step="0.1" value="0.5">
+                                <div class="d-flex justify-content-between">
+                                  <small>Memoria persistente (k=0.1)</small>
+                                  <small>Memoria fugaz (k=1.0)</small>
+                                </div>
+                              </div>
+                  
+                              <div class="ratio ratio-16x9">
+                                <iframe id="geoGebraSim"
+                                        src="https://www.geogebra.org/calculator/hahkfemy"
+                                        class="border rounded"
+                                        allowfullscreen>
+                                </iframe>
+                              </div>
+                  
+                              <div class="mt-3 alert alert-info small">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Usa el deslizador para ajustar el parámetro k y observa cómo 
+                                cambia la curva de intensidad \[I(t) = 10e^{-kt}\]
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <script>
+                    document.getElementById('rangoK').addEventListener('input', function(e) {
+                      const kValue = e.target.value;
+                      const iframe = document.getElementById('geoGebraSim');
+                      iframe.src = `https://www.geogebra.org/calculator/hahkfemy`;
+                    });
+                  </script>
+
+<div class="col-md-12">
+    <div class="card actividad-card h-100">
+      <div class="card-body">
+        <h5 class="card-title text-danger">🖋️ Taller Poético-Matemático</h5>
+        <p>Crea tu poema usando elementos matemáticos:</p>
+        <div class="mb-3">
+          <label class="form-label">Estructura métrica:</label>
+          <select class="form-select">
+            <option>ABAB (Cuarteto)</option>
+            <option>ABBA (Serventesio)</option>
+          </select>
+        </div>
+        <textarea class="form-control mb-3" rows="4" placeholder="Escribe tu poema aquí..."></textarea>
+        <button class="btn btn-outline-danger"><i class="fas fa-share me-2"></i>Compartir</button>
+      </div>
+    </div>
+  </div> 
+
+        <!-- Recursos -->
+        <section id="recursos" class="mb-5">
+          <h2 class="mb-4"><i class="fas fa-link me-3"></i>Recursos Digitales</h2>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="fas fa-book me-2"></i>Textos Completos</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a href="https://wmagazin.com/relatos/antonio-machado-y-los-poemas-que-evocan-sus-ultimos-versos" target="_blank" class="text-decoration-none">
+                        Poemas completos de Machado
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="fas fa-tools me-2"></i>Herramientas</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a href="https://www.geogebra.org/graphing?lang=es" target="_blank" class="text-decoration-none">
+                        Calculadora gráfica Geogebra
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Gráfico de intensidad de recuerdos
+    const ctx = document.getElementById('graficoIntensidad').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['0 años', '5 años', '10 años', '15 años', '20 años'],
+        datasets: [{
+          label: 'Intensidad del recuerdo',
+          data: [10, 8, 6, 4, 2],
+          borderColor: '#e74c3c',
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Intensidad' }
+          },
+          x: {
+            title: { display: true, text: 'Tiempo' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
